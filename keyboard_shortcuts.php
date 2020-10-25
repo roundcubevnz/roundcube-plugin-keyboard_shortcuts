@@ -22,7 +22,6 @@
  * f:	Forward message
  * j:	Go to previous page of messages (as Gmail)
  * k:	Go to next page of messages (as Gmail)
- * m:	Mark message(s) read/unread (as Thunderbird)
  * p:	Print message
  * r:	Reply to message
  * R:	Reply to all of message
@@ -80,13 +79,12 @@ class keyboard_shortcuts extends rcube_plugin
         $archive_supported = $rcmail->config->get('archive_mbox');
 
         $c = "";
-        $c .= '<span id="keyboard_shortcuts_title">' . $this->gettext("title") . ":&nbsp;</span><a id='keyboard_shortcuts_link' href='#' class='button' title='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' onclick='return keyboard_shortcuts_show_help()'><img align='top' src='plugins/keyboard_shortcuts/skins/".$skin."/images/keyboard.png' alt='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' /></a>\n";
+        $c .= '<span id="keyboard_shortcuts_title">' . $this->gettext("title") . "</span><a id='keyboard_shortcuts_link' href='#' class='button' title='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' onclick='return keyboard_shortcuts_show_help()'><img src='plugins/keyboard_shortcuts/skins/".$skin."/images/keyboard.png' alt='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' /></a>";
         $c .= "<div id='keyboard_shortcuts_help'>";
         $c .= "<div><h4>".$this->gettext("mailboxview")."</h4>";
         $c .= "<div class='shortcut_key'>?</div> ".$this->gettext('help')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>a</div> ".$this->gettext('selectallvisiblemessages')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>A</div> ".$this->gettext('markallvisiblemessagesasread')."<br class='clear' />";
-        $c .= "<div class='shortcut_key'>m</div> ".$this->gettext('markselected')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>c</div> ".$this->gettext('compose')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>d</div> ".$this->gettext('deletemessage')."<br class='clear' />";
         if (!empty($archive_supported)) {
@@ -99,7 +97,6 @@ class keyboard_shortcuts extends rcube_plugin
         $c .= "<div class='shortcut_key'>r</div> ".$this->gettext('replytomessage')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>R</div> ".$this->gettext('replytoallmessage')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>s</div> ".$this->gettext('quicksearch')."<br class='clear' />";
-        $c .= "<div class='shortcut_key'>t</div> ".$this->gettext('mailpreviewtoggle')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>u</div> ".$this->gettext('checkmail')."<br class='clear' />";
         $c .= "<div class='shortcut_key'> </div> <br class='clear' />";
         $c .= "</div>";
